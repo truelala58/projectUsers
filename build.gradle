@@ -1,0 +1,25 @@
+apply plugin: "java-library"
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'io.rest-assured', name: 'rest-assured', version: '5.0.1'
+    compile('org.testng:testng:7.4.0')
+    implementation 'com.google.inject:guice:5.1.0'
+    implementation 'com.fasterxml.jackson.core:jackson-core:2.13.3'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.3'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    implementation 'io.rest-assured:json-schema-validator:5.0.1'
+    implementation 'org.projectlombok:lombok:1.18.24'
+    implementation 'com.github.javafaker:javafaker:1.0.2'
+}
+
+test{
+    useTestNG()
+    systemProperty 'base.url',"https://petstore.swagger.io/v2"
+}

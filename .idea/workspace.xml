@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1a2582ad-a79a-4445-8c76-9401ad9a532a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/services/UserClient.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="29ephgEvEwhT60DFE6Ianakyulw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\projectPets\src\main\resources" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="data.users" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.TestUser">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="projectUsers" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="projectUsers" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="filePath" />
+      <option name="vmParameters" />
+      <option name="alternativeJrePath" />
+      <option name="programParameters" />
+      <option name="passParentEnvs" value="true" />
+      <option name="workingDirectory" />
+      <option name="isAlternativeJrePathEnabled" value="false" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestUser" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="projectPets.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="user" />
+      <option name="MAIN_CLASS_NAME" value="user.TestUser" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestUser.createListGetUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="projectPets.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="user" />
+      <option name="MAIN_CLASS_NAME" value="user.TestUser" />
+      <option name="METHOD_NAME" value="createListGetUserTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestUser.createLoginGetUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="projectPets.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="user" />
+      <option name="MAIN_CLASS_NAME" value="user.TestUser" />
+      <option name="METHOD_NAME" value="createLoginGetUserTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestUser.createLoginLogoutUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="projectPets.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="user" />
+      <option name="MAIN_CLASS_NAME" value="user.TestUser" />
+      <option name="METHOD_NAME" value="createLoginLogoutUserTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestUser.createLoginUpdateUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="projectPets.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="user" />
+      <option name="MAIN_CLASS_NAME" value="user.TestUser" />
+      <option name="METHOD_NAME" value="createLoginUpdateUserTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.TestUser" />
+        <item itemvalue="TestNG.TestUser.createListGetUserTest" />
+        <item itemvalue="TestNG.TestUser.createLoginLogoutUserTest" />
+        <item itemvalue="TestNG.TestUser.createLoginUpdateUserTest" />
+        <item itemvalue="TestNG.TestUser.createLoginGetUserTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1a2582ad-a79a-4445-8c76-9401ad9a532a" name="Default Changelist" comment="" />
+      <created>1653483525355</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653483525355</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="600" y="224" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1654697953381">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-990" y="284" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653494109351" />
+    <state x="600" y="224" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654697953381" />
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1654691707980">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654691707980" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1654691093120">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654691093120" />
+    <state x="-966" y="99" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1653493206573">
+      <screen x="-1440" y="99" width="1440" height="860" />
+    </state>
+    <state x="-966" y="99" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653493206573" />
+    <state x="-990" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1653494166683">
+      <screen x="-1440" y="99" width="1440" height="860" />
+    </state>
+    <state x="-990" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653494166683" />
+    <state x="667" y="224" key="FileChooserDialogImpl" timestamp="1654705386802">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-940" y="284" key="FileChooserDialogImpl/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501678702" />
+    <state x="667" y="224" key="FileChooserDialogImpl/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654705386802" />
+    <state width="1877" height="256" key="GridCell.Tab.0.bottom" timestamp="1654707127096">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1397" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501393075" />
+    <state width="1877" height="256" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654707127096" />
+    <state width="1877" height="256" key="GridCell.Tab.0.center" timestamp="1654707127096">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1397" height="276" key="GridCell.Tab.0.center/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501393075" />
+    <state width="1877" height="256" key="GridCell.Tab.0.center/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654707127096" />
+    <state width="1877" height="256" key="GridCell.Tab.0.left" timestamp="1654707127096">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1397" height="276" key="GridCell.Tab.0.left/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501393075" />
+    <state width="1877" height="256" key="GridCell.Tab.0.left/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654707127096" />
+    <state width="1877" height="256" key="GridCell.Tab.0.right" timestamp="1654707127096">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1397" height="276" key="GridCell.Tab.0.right/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501393075" />
+    <state width="1877" height="256" key="GridCell.Tab.0.right/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654707127096" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1654690571139">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1397" height="276" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501393075" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654690571139" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1654690571139">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1397" height="276" key="GridCell.Tab.1.center/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501393075" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654690571139" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1654690571139">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1397" height="276" key="GridCell.Tab.1.left/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501393075" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654690571139" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1654690571139">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1397" height="276" key="GridCell.Tab.1.right/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501393075" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654690571139" />
+    <state x="461" y="162" width="998" height="708" key="SettingsEditor" timestamp="1654690555219">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-998" y="135" width="998" height="708" key="SettingsEditor/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501386093" />
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654690555219" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1654690640803">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-948" y="383" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501578722" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654690640803" />
+  </component>
+</project>
