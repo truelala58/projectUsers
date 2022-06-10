@@ -12,6 +12,7 @@ public  abstract  class BaseClientAbs {
     protected RequestSpecification requestSpecification = RestAssured
             .given()
             .contentType(ContentType.JSON)
+        //  .baseUri(System.getProperty("base.url"))  //URI не хочет браться из buil.gradle, ошибка: IllegalArgumentException: Base URI cannot be null
             .baseUri("https://petstore.swagger.io/v2")
             .log()
             .all();

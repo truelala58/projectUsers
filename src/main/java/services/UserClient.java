@@ -83,6 +83,15 @@ public class UserClient extends BaseClientAbs {
                        this.resourcesFolderPath, "user_response.json"))))
                .body(Matchers.containsStringIgnoringCase("message\":\"" + username));
     }
+    public void deleteUserNotFound(String username){
+        given()
+                .spec(this.requestSpecification)
+                .when()
+                .delete("/"+ username)
+                .then()
+                .assertThat()
+                .statusCode(404);
+    }
     public void updateUser(User user, String username){
                 given()
                 .spec(this.requestSpecification)

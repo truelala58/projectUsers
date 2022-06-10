@@ -56,6 +56,27 @@ public class TestUser {
         userClient.loginUser(newUser.getUsername(),newUser.getPassword());
         userClient.deleteUser(username);
     }
+
+    @Test
+    public void createLoginDeleteUserNotFoundTest(){
+        long id = (long) (Math.random()*99999);
+        String username = faker.name().username();
+        User newUser = User.builder()
+                .id(id)
+                .username(username)
+                .firstName(faker.name().firstName())
+                .lastName(faker.name().lastName())
+                .email(String.format("%s@mail.ru",faker.name().firstName()+faker.name().lastName()))
+                .password(faker.code().ean8())
+                .phone(faker.phoneNumber().cellPhone())
+                .userStatus(0)
+                .build();
+
+        userClient.createUser(newUser);
+        userClient.loginUser(newUser.getUsername(),newUser.getPassword());
+        userClient.deleteUserNotFound(faker.name().username());
+    }
+
     @Test
     public void createLoginUpdateUserTest(){
         long id = (long) (Math.random()*99999);
