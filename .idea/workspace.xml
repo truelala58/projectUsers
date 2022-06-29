@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a2582ad-a79a-4445-8c76-9401ad9a532a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/data/users/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/data/users/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/BaseClientAbs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/BaseClientAbs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/UserClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/UserClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/user/TestUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/user/TestUser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +76,7 @@
       <recent name="data.users" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.TestUser">
+  <component name="RunManager" selected="TestNG.TestUser.createLoginUpdateUserTest">
     <configuration default="true" type="JetRunConfigurationType">
       <module name="projectUsers" />
       <option name="VM_PARAMETERS" />
@@ -120,23 +124,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestUser" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="projectPets.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="user.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="user" />
-      <option name="MAIN_CLASS_NAME" value="user.TestUser" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestUser.createListGetUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="projectPets.test" />
       <extension name="coverage">
@@ -155,6 +142,42 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TestUser.createLoginDeleteUserNotFoundTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="projectPets.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="user" />
+      <option name="MAIN_CLASS_NAME" value="user.TestUser" />
+      <option name="METHOD_NAME" value="createLoginDeleteUserNotFoundTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestUser.createLoginDeleteUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="projectPets.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="user.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="user" />
+      <option name="MAIN_CLASS_NAME" value="user.TestUser" />
+      <option name="METHOD_NAME" value="createLoginDeleteUserTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestUser.createLoginGetUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="projectPets.test" />
       <extension name="coverage">
@@ -166,24 +189,6 @@
       <option name="PACKAGE_NAME" value="user" />
       <option name="MAIN_CLASS_NAME" value="user.TestUser" />
       <option name="METHOD_NAME" value="createLoginGetUserTest" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestUser.createLoginLogoutUserTest" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="projectPets.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="user.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="user" />
-      <option name="MAIN_CLASS_NAME" value="user.TestUser" />
-      <option name="METHOD_NAME" value="createLoginLogoutUserTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -211,11 +216,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.TestUser" />
-        <item itemvalue="TestNG.TestUser.createListGetUserTest" />
-        <item itemvalue="TestNG.TestUser.createLoginLogoutUserTest" />
         <item itemvalue="TestNG.TestUser.createLoginUpdateUserTest" />
         <item itemvalue="TestNG.TestUser.createLoginGetUserTest" />
+        <item itemvalue="TestNG.TestUser.createListGetUserTest" />
+        <item itemvalue="TestNG.TestUser.createLoginDeleteUserNotFoundTest" />
+        <item itemvalue="TestNG.TestUser.createLoginDeleteUserTest" />
       </list>
     </recent_temporary>
   </component>
@@ -242,9 +247,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654691707980" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1654691093120">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-866" y="288" key="#com.intellij.ide.util.MemberChooser" timestamp="1656065177494">
+      <screen x="-1440" y="99" width="1440" height="860" />
     </state>
+    <state x="-866" y="288" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1656065177494" />
     <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654691093120" />
     <state x="-966" y="99" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1653493206573">
       <screen x="-1440" y="99" width="1440" height="860" />
@@ -254,60 +260,78 @@
       <screen x="-1440" y="99" width="1440" height="860" />
     </state>
     <state x="-990" y="276" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653494166683" />
-    <state x="667" y="224" key="FileChooserDialogImpl" timestamp="1654705386802">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="500" y="185" key="FileChooserDialogImpl" timestamp="1655477234182">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
+    <state x="500" y="185" key="FileChooserDialogImpl/0.0.1440.860@0.0.1440.860" timestamp="1655477234182" />
     <state x="-940" y="284" key="FileChooserDialogImpl/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501678702" />
     <state x="667" y="224" key="FileChooserDialogImpl/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654705386802" />
-    <state width="1877" height="256" key="GridCell.Tab.0.bottom" timestamp="1654707127096">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1397" height="140" key="GridCell.Tab.0.bottom" timestamp="1656493136360">
+      <screen x="-1440" y="99" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501393075" />
-    <state width="1877" height="256" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654707127096" />
-    <state width="1877" height="256" key="GridCell.Tab.0.center" timestamp="1654707127096">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1397" height="140" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1656493136360" />
+    <state width="1877" height="256" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1656080078875" />
+    <state width="1397" height="140" key="GridCell.Tab.0.center" timestamp="1656493136359">
+      <screen x="-1440" y="99" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.0.center/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501393075" />
-    <state width="1877" height="256" key="GridCell.Tab.0.center/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654707127096" />
-    <state width="1877" height="256" key="GridCell.Tab.0.left" timestamp="1654707127096">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1397" height="140" key="GridCell.Tab.0.center/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1656493136359" />
+    <state width="1877" height="256" key="GridCell.Tab.0.center/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1656080078875" />
+    <state width="1397" height="140" key="GridCell.Tab.0.left" timestamp="1656493136359">
+      <screen x="-1440" y="99" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.0.left/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501393075" />
-    <state width="1877" height="256" key="GridCell.Tab.0.left/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654707127096" />
-    <state width="1877" height="256" key="GridCell.Tab.0.right" timestamp="1654707127096">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1397" height="140" key="GridCell.Tab.0.left/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1656493136359" />
+    <state width="1877" height="256" key="GridCell.Tab.0.left/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1656080078874" />
+    <state width="1397" height="140" key="GridCell.Tab.0.right" timestamp="1656493136359">
+      <screen x="-1440" y="99" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.0.right/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501393075" />
-    <state width="1877" height="256" key="GridCell.Tab.0.right/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654707127096" />
-    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1654690571139">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1397" height="140" key="GridCell.Tab.0.right/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1656493136359" />
+    <state width="1877" height="256" key="GridCell.Tab.0.right/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1656080078875" />
+    <state width="1397" height="246" key="GridCell.Tab.1.bottom" timestamp="1656489720933">
+      <screen x="-1440" y="99" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501393075" />
+    <state width="1397" height="246" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1656489720933" />
     <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654690571139" />
-    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1654690571139">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1397" height="246" key="GridCell.Tab.1.center" timestamp="1656489720933">
+      <screen x="-1440" y="99" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.1.center/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501393075" />
+    <state width="1397" height="246" key="GridCell.Tab.1.center/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1656489720933" />
     <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654690571139" />
-    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1654690571139">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1397" height="246" key="GridCell.Tab.1.left" timestamp="1656489720933">
+      <screen x="-1440" y="99" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.1.left/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501393075" />
+    <state width="1397" height="246" key="GridCell.Tab.1.left/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1656489720933" />
     <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654690571139" />
-    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1654690571139">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1397" height="246" key="GridCell.Tab.1.right" timestamp="1656489720933">
+      <screen x="-1440" y="99" width="1440" height="860" />
     </state>
-    <state width="1397" height="276" key="GridCell.Tab.1.right/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501393075" />
+    <state width="1397" height="246" key="GridCell.Tab.1.right/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1656489720933" />
     <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654690571139" />
     <state x="461" y="162" width="998" height="708" key="SettingsEditor" timestamp="1654690555219">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-998" y="135" width="998" height="708" key="SettingsEditor/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501386093" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654690555219" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1654690640803">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="492" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1655477179426">
+      <screen x="0" y="0" width="1440" height="860" />
     </state>
+    <state x="492" y="284" key="com.intellij.ide.util.TipDialog/0.0.1440.860@0.0.1440.860" timestamp="1655477179426" />
     <state x="-948" y="383" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1440.99.1440.860@-1440.99.1440.860" timestamp="1653501578722" />
     <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1440.99.1440.860@0.0.1920.1040" timestamp="1654690640803" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/user/TestUser.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/user/TestUser.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

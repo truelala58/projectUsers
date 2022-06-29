@@ -8,6 +8,7 @@ import org.hamcrest.Matchers;
 
 import java.io.File;
 import java.util.Arrays;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Random;
 
@@ -19,22 +20,8 @@ public class UserClient extends BaseClientAbs {
         this.requestSpecification.basePath("/user");
     }
 
-//    public User newUser(long id, String username, String firstName, String lastName, String email, String password, String phone, long userStatus){
-//        User newUser = User.builder()
-//                .id(id)
-//                .username(username)
-//                .firstName(firstName)
-//                .lastName(lastName)
-//                .email(email)
-//                .password(password)
-//                .phone(phone)
-//                .userStatus(userStatus)
-//                .build();
-//        return newUser;
-//    }
-
-    public void createUser(User user){
-                 given()
+    public String createUser(User user){
+         String createResp = given()
                 .spec(this.requestSpecification)
                 .when()
                 .body(user)
@@ -43,10 +30,12 @@ public class UserClient extends BaseClientAbs {
                 .assertThat()
                 .spec(this.responseSpecification)
                 .body(JsonSchemaValidator.matchesJsonSchema(new File(String.format("%s/src/main/resources/%s",
-                                 this.resourcesFolderPath, "user_response.json"))));
+                                 this.resourcesFolderPath, "user_response.json"))))
+                .extract().body().jsonPath().getString(".");
+         return createResp;
     }
-    public void loginUser(String username, String password){
-                 given()
+    public String loginUser(String username, String password){
+          String loginResp = given()
                 .spec(this.requestSpecification)
                 .when()
                 .queryParam("username",username)
@@ -57,10 +46,11 @@ public class UserClient extends BaseClientAbs {
                 .spec(this.responseSpecification)
                 .body(JsonSchemaValidator.matchesJsonSchema(new File(String.format("%s/src/main/resources/%s",
                         this.resourcesFolderPath, "user_response.json"))))
-                .body(Matchers.containsStringIgnoringCase("logged in user session:"));
+                .extract().body().jsonPath().getString(".");
+          return loginResp;
     }
-    public void logoutUser(){
-                given()
+    public String logoutUser(){
+     String logoutResp = given()
                 .spec(this.requestSpecification)
                 .when()
                 .get("/logout")
@@ -69,10 +59,11 @@ public class UserClient extends BaseClientAbs {
                 .spec(this.responseSpecification)
                         .body(JsonSchemaValidator.matchesJsonSchema(new File(String.format("%s/src/main/resources/%s",
                                 this.resourcesFolderPath, "user_response.json"))))
-                .body(Matchers.containsStringIgnoringCase("message\":\"ok"));
+             .extract().body().jsonPath().getString(".");
+     return logoutResp;
     }
-    public void deleteUser(String username){
-                 given()
+    public String deleteUser(String username){
+        String deleteResp = given()
                 .spec(this.requestSpecification)
                 .when()
                 .delete("/"+ username)
@@ -81,19 +72,22 @@ public class UserClient extends BaseClientAbs {
                 .spec(this.responseSpecification)
                 .body(JsonSchemaValidator.matchesJsonSchema(new File(String.format("%s/src/main/resources/%s",
                        this.resourcesFolderPath, "user_response.json"))))
-               .body(Matchers.containsStringIgnoringCase("message\":\"" + username));
+                .extract().body().jsonPath().getString(".");
+        return deleteResp;
     }
-    public void deleteUserNotFound(String username){
-        given()
+    public String deleteUserNotFound(String username){
+      String deleteRespError =  given()
                 .spec(this.requestSpecification)
                 .when()
                 .delete("/"+ username)
                 .then()
                 .assertThat()
-                .statusCode(404);
+                .statusCode(404)
+                .extract().body().asString();
+      return  deleteRespError;
     }
-    public void updateUser(User user, String username){
-                given()
+    public String updateUser(User user, String username){
+        String updatedUser =  given()
                 .spec(this.requestSpecification)
                 .when()
                 .body(user)
@@ -103,22 +97,26 @@ public class UserClient extends BaseClientAbs {
                 .spec(this.responseSpecification)
                 .body(JsonSchemaValidator.matchesJsonSchema(new File(String.format("%s/src/main/resources/%s",
                         this.resourcesFolderPath, "user_response.json"))))
-                .body(Matchers.containsStringIgnoringCase("message\":\"" + user.getId()));
+                .extract().body().jsonPath().getString(".");
+        return updatedUser;
     }
 
-    public void getUser(String username){
-                 given()
+    public LinkedHashMap<String,String> getUser(String username){
+        LinkedHashMap<String,String> getUserResp =   given()
                 .spec(this.requestSpecification)
                 .when()
                 .get("/"+ username)
+                 //        .as(User.class) добавить ассерт - сравнить с тем, что ищем
                 .then()
                 .assertThat()
                 .spec(this.responseSpecification)
                 .body(JsonSchemaValidator.matchesJsonSchema(new File(String.format("%s/src/main/resources/%s",
-                        this.resourcesFolderPath, "getUser_response.json"))));
+                        this.resourcesFolderPath, "getUser_response.json"))))
+                .extract().body().jsonPath().getJsonObject(".");
+        return getUserResp;
     }
-    public void createUserList(List<User> userList){
-                given()
+    public String createUserList(List<User> userList){
+        String userCreateListResp = given()
                 .spec(this.requestSpecification)
                 .when()
                 .body(userList)
@@ -128,10 +126,11 @@ public class UserClient extends BaseClientAbs {
                 .spec(this.responseSpecification)
                 .body(JsonSchemaValidator.matchesJsonSchema(new File(String.format("%s/src/main/resources/%s",
                         this.resourcesFolderPath, "user_response.json"))))
-                .body(Matchers.containsStringIgnoringCase("message\":\"ok"));
+                .extract().body().jsonPath().getString(".");
+        return userCreateListResp;
     }
-    public void createUserArray(User userArray[]){
-                 given()
+    public String createUserArray(User userArray[]){
+        String userCreateListResp = given()
                 .spec(this.requestSpecification)
                 .when()
                 .body(userArray)
@@ -141,6 +140,7 @@ public class UserClient extends BaseClientAbs {
                 .spec(this.responseSpecification)
                 .body(JsonSchemaValidator.matchesJsonSchema(new File(String.format("%s/src/main/resources/%s",
                         this.resourcesFolderPath, "user_response.json"))))
-                .body(Matchers.containsStringIgnoringCase("message\":\"ok"));
+                .extract().body().jsonPath().getString(".");
+        return userCreateListResp;
     }
 }

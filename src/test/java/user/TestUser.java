@@ -3,11 +3,15 @@ package user;
 import com.github.javafaker.Faker;
 import com.google.inject.Inject;
 import data.users.User;
+import org.hamcrest.Matchers;
+import org.testng.Assert;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
+import org.testng.asserts.Assertion;
 import services.UserClient;
 import services.UserModule;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 @Guice(modules = UserModule.class)
@@ -15,8 +19,8 @@ public class TestUser {
 
     @Inject
     private UserClient userClient;
-
-    Faker faker = new Faker();
+    @Inject
+    private Faker faker;
 
     @Test
     public void createLoginLogoutUserTest(){
@@ -32,9 +36,12 @@ public class TestUser {
                 .userStatus(0)
                 .build();
 
-        userClient.createUser(newUser);
-        userClient.loginUser(newUser.getUsername(),newUser.getPassword());
-        userClient.logoutUser();
+        String createResp = userClient.createUser(newUser);
+        Assert.assertTrue(createResp.contains(Long.toString(newUser.getId())));
+        String loginResp = userClient.loginUser(newUser.getUsername(),newUser.getPassword());
+        Assert.assertTrue(loginResp.contains("logged in user session:"));
+        String logoutResp = userClient.logoutUser();
+        Assert.assertTrue(logoutResp.contains("message:ok"));
     }
 
     @Test
@@ -52,9 +59,12 @@ public class TestUser {
                 .userStatus(0)
                 .build();
 
-        userClient.createUser(newUser);
-        userClient.loginUser(newUser.getUsername(),newUser.getPassword());
-        userClient.deleteUser(username);
+        String createResp = userClient.createUser(newUser);
+        Assert.assertTrue(createResp.contains(Long.toString(newUser.getId())));
+        String loginResp = userClient.loginUser(newUser.getUsername(),newUser.getPassword());
+        Assert.assertTrue(loginResp.contains("logged in user session:"));
+        String deletedResp = userClient.deleteUser(username);
+        Assert.assertTrue(deletedResp.contains(newUser.getUsername()));
     }
 
     @Test
@@ -72,9 +82,13 @@ public class TestUser {
                 .userStatus(0)
                 .build();
 
-        userClient.createUser(newUser);
-        userClient.loginUser(newUser.getUsername(),newUser.getPassword());
-        userClient.deleteUserNotFound(faker.name().username());
+        String createResp = userClient.createUser(newUser);
+        Assert.assertTrue(createResp.contains(Long.toString(newUser.getId())));
+        String loginResp = userClient.loginUser(newUser.getUsername(),newUser.getPassword());
+        Assert.assertTrue(loginResp.contains("logged in user session:"));
+        String deleteRespError = userClient.deleteUserNotFound(faker.name().username());
+        Assert.assertTrue(deleteRespError.isEmpty());
+
     }
 
     @Test
@@ -92,8 +106,10 @@ public class TestUser {
                 .userStatus(0)
                 .build();
 
-        userClient.createUser(newUser);
-        userClient.loginUser(newUser.getUsername(),newUser.getPassword());
+        String createResp = userClient.createUser(newUser);
+        Assert.assertTrue(createResp.contains(Long.toString(newUser.getId())));
+        String loginResp = userClient.loginUser(newUser.getUsername(),newUser.getPassword());
+        Assert.assertTrue(loginResp.contains("logged in user session:"));
 
         User updateUser = User.builder()
                 .id(id)
@@ -106,8 +122,10 @@ public class TestUser {
                 .userStatus(0)
                 .build();
 
-        userClient.updateUser(updateUser,username);
-        userClient.getUser(username);
+        String updatedUserResp = userClient.updateUser(updateUser,username);
+        Assert.assertTrue(updatedUserResp.contains(Long.toString(updateUser.getId())));
+        LinkedHashMap<String,String> getUserResp =  userClient.getUser(username);
+        checkGetUserResp(updateUser,getUserResp);
 
     }
     @Test
@@ -125,9 +143,12 @@ public class TestUser {
                 .userStatus(0)
                 .build();
 
-        userClient.createUser(newUser);
-        userClient.getUser(username);
+        String createResp = userClient.createUser(newUser);
+        Assert.assertTrue(createResp.contains(Long.toString(newUser.getId())));
+        LinkedHashMap<String,String> getUserResp =  userClient.getUser(username);
+        checkGetUserResp(newUser,getUserResp);
     }
+
     @Test
     public void createListGetUserTest(){
         String firstUsername = faker.name().username();
@@ -156,9 +177,22 @@ public class TestUser {
         userList.add(firstUser);
         userList.add(secondUser);
 
-        userClient.createUserList(userList);
-        userClient.getUser(firstUsername);
-        userClient.getUser(secondUsername);
+        String userCreateListResp = userClient.createUserList(userList);
+        Assert.assertTrue(userCreateListResp.contains("message:ok"));
+        LinkedHashMap<String,String> getUserRespFirst = userClient.getUser(firstUsername);
+        checkGetUserResp(firstUser,getUserRespFirst);
+        LinkedHashMap<String,String> getUserRespSecond = userClient.getUser(secondUsername);
+        checkGetUserResp(secondUser,getUserRespSecond);
+    }
+    public void checkGetUserResp(User user, LinkedHashMap<String,String> getUserResp){
+        Assert.assertEquals(user.getUsername(), getUserResp.get("username"));
+        Assert.assertEquals(user.getEmail(), getUserResp.get("email"));
+        Assert.assertEquals(user.getFirstName(), getUserResp.get("firstName"));
+        Assert.assertEquals(user.getLastName(), getUserResp.get("lastName"));
+        Assert.assertEquals(user.getPassword(), getUserResp.get("password"));
+        Assert.assertEquals(user.getPhone(), getUserResp.get("phone"));
+//        Assert.assertTrue(getUserResp.get("userStatus").equals(Long.toString(user.getUserStatus())));
+//        Assert.assertTrue(getUserResp.get("id").equals(String.valueOf(user.getId())));
     }
 
 }
