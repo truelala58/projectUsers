@@ -3,6 +3,7 @@ package services;
 import com.github.javafaker.Faker;
 import data.users.User;
 import io.restassured.module.jsv.JsonSchemaValidator;
+import io.restassured.response.Response;
 import io.restassured.specification.ResponseSpecification;
 import org.hamcrest.Matchers;
 
@@ -49,6 +50,7 @@ public class UserClient extends BaseClientAbs {
                 .extract().body().jsonPath().getString(".");
           return loginResp;
     }
+
     public String logoutUser(){
      String logoutResp = given()
                 .spec(this.requestSpecification)
@@ -62,6 +64,7 @@ public class UserClient extends BaseClientAbs {
              .extract().body().jsonPath().getString(".");
      return logoutResp;
     }
+
     public String deleteUser(String username){
         String deleteResp = given()
                 .spec(this.requestSpecification)
@@ -75,6 +78,7 @@ public class UserClient extends BaseClientAbs {
                 .extract().body().jsonPath().getString(".");
         return deleteResp;
     }
+
     public String deleteUserNotFound(String username){
       String deleteRespError =  given()
                 .spec(this.requestSpecification)
@@ -86,6 +90,7 @@ public class UserClient extends BaseClientAbs {
                 .extract().body().asString();
       return  deleteRespError;
     }
+
     public String updateUser(User user, String username){
         String updatedUser =  given()
                 .spec(this.requestSpecification)
@@ -101,20 +106,22 @@ public class UserClient extends BaseClientAbs {
         return updatedUser;
     }
 
-    public LinkedHashMap<String,String> getUser(String username){
-        LinkedHashMap<String,String> getUserResp =   given()
+    public User getUser(String username){
+        Response response =   given()
                 .spec(this.requestSpecification)
                 .when()
-                .get("/"+ username)
-                 //        .as(User.class) добавить ассерт - сравнить с тем, что ищем
+                .get("/"+ username);
+
+        User user = response.as(User.class);
+        response
                 .then()
                 .assertThat()
                 .spec(this.responseSpecification)
                 .body(JsonSchemaValidator.matchesJsonSchema(new File(String.format("%s/src/main/resources/%s",
-                        this.resourcesFolderPath, "getUser_response.json"))))
-                .extract().body().jsonPath().getJsonObject(".");
-        return getUserResp;
+                        this.resourcesFolderPath, "getUser_response.json"))));
+        return user;
     }
+
     public String createUserList(List<User> userList){
         String userCreateListResp = given()
                 .spec(this.requestSpecification)
@@ -129,6 +136,7 @@ public class UserClient extends BaseClientAbs {
                 .extract().body().jsonPath().getString(".");
         return userCreateListResp;
     }
+
     public String createUserArray(User userArray[]){
         String userCreateListResp = given()
                 .spec(this.requestSpecification)

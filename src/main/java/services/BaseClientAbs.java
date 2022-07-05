@@ -12,8 +12,7 @@ public  abstract  class BaseClientAbs {
     protected RequestSpecification requestSpecification = RestAssured
             .given()
             .contentType(ContentType.JSON)
-            .baseUri(System.getProperty("base.url")) 
-       //     .baseUri("https://petstore.swagger.io/v2")
+            .baseUri(System.getProperty("base.url","https://petstore.swagger.io/v2"))
             .log()
             .all();
 

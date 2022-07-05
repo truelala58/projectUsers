@@ -3,15 +3,12 @@ package user;
 import com.github.javafaker.Faker;
 import com.google.inject.Inject;
 import data.users.User;
-import org.hamcrest.Matchers;
 import org.testng.Assert;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
 import services.UserClient;
 import services.UserModule;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 
 @Guice(modules = UserModule.class)
@@ -124,10 +121,10 @@ public class TestUser {
 
         String updatedUserResp = userClient.updateUser(updateUser,username);
         Assert.assertTrue(updatedUserResp.contains(Long.toString(updateUser.getId())));
-        LinkedHashMap<String,String> getUserResp =  userClient.getUser(username);
-        checkGetUserResp(updateUser,getUserResp);
-
+        User getUser =  userClient.getUser(username);
+        checkGetUser(updateUser,getUser);
     }
+
     @Test
     public void createLoginGetUserTest(){
         long id = (long) (Math.random()*99999);
@@ -145,8 +142,8 @@ public class TestUser {
 
         String createResp = userClient.createUser(newUser);
         Assert.assertTrue(createResp.contains(Long.toString(newUser.getId())));
-        LinkedHashMap<String,String> getUserResp =  userClient.getUser(username);
-        checkGetUserResp(newUser,getUserResp);
+        User getUser =  userClient.getUser(username);
+        checkGetUser(newUser,getUser);
     }
 
     @Test
@@ -179,20 +176,20 @@ public class TestUser {
 
         String userCreateListResp = userClient.createUserList(userList);
         Assert.assertTrue(userCreateListResp.contains("message:ok"));
-        LinkedHashMap<String,String> getUserRespFirst = userClient.getUser(firstUsername);
-        checkGetUserResp(firstUser,getUserRespFirst);
-        LinkedHashMap<String,String> getUserRespSecond = userClient.getUser(secondUsername);
-        checkGetUserResp(secondUser,getUserRespSecond);
+        User getUserFirst = userClient.getUser(firstUsername);
+        checkGetUser(firstUser,getUserFirst);
+        User getUserSecond = userClient.getUser(secondUsername);
+        checkGetUser(secondUser,getUserSecond);
     }
-    public void checkGetUserResp(User user, LinkedHashMap<String,String> getUserResp){
-        Assert.assertEquals(user.getUsername(), getUserResp.get("username"));
-        Assert.assertEquals(user.getEmail(), getUserResp.get("email"));
-        Assert.assertEquals(user.getFirstName(), getUserResp.get("firstName"));
-        Assert.assertEquals(user.getLastName(), getUserResp.get("lastName"));
-        Assert.assertEquals(user.getPassword(), getUserResp.get("password"));
-        Assert.assertEquals(user.getPhone(), getUserResp.get("phone"));
-//        Assert.assertTrue(getUserResp.get("userStatus").equals(Long.toString(user.getUserStatus())));
-//        Assert.assertTrue(getUserResp.get("id").equals(String.valueOf(user.getId())));
+    public void checkGetUser(User user, User getUser){
+        Assert.assertEquals(user.getUsername(), getUser.getUsername());
+        Assert.assertEquals(user.getEmail(), getUser.getEmail());
+        Assert.assertEquals(user.getFirstName(), getUser.getFirstName());
+        Assert.assertEquals(user.getLastName(), getUser.getLastName());
+        Assert.assertEquals(user.getPassword(), getUser.getPassword());
+        Assert.assertEquals(user.getPhone(), getUser.getPhone());
+        Assert.assertEquals(user.getUserStatus(), getUser.getUserStatus());
+        Assert.assertEquals(user.getId(), getUser.getId());
     }
 
 }
